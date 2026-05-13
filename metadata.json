@@ -1,0 +1,13 @@
+{
+  "name": "OBOYANBAJA INVESTMENTS NIG LTD",
+  "description": "Premium luxury real estate website and CMS for land sales, property development, and management services.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Firebase CMS",
+    "Real-time Property Management",
+    "Luxury UI/UX",
+    "Responsive Multi-page Design"
+  ]
+}
