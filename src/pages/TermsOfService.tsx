@@ -71,7 +71,7 @@ export default function TermsOfService() {
             <div>
               <h2 className="text-2xl font-serif text-charcoal mb-4">8. Contact Information</h2>
               <p>
-                For questions regarding these Terms of Service, please contact us at oboyanbaja@gmail.com.
+                For questions regarding these Terms of Service, please contact us via phone or WhatsApp.
               </p>
             </div>
           </div>

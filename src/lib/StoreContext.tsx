@@ -154,6 +154,10 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
         const { data: contentData, error: contentError } = await supabase.from('site_content').select('*').eq('id', 1).single();
         if (!contentError && contentData) {
+          let _email1 = (contentData.contact_email1 === 'info@oboyanbajainvestment.com' ? INITIAL_CONTENT.contactInfo.email1 : contentData.contact_email1) || INITIAL_CONTENT.contactInfo.email1;
+          let _email2 = (contentData.contact_email2 === 'info@oboyanbajainvestment.com' ? INITIAL_CONTENT.contactInfo.email2 : contentData.contact_email2) || INITIAL_CONTENT.contactInfo.email2;
+          if (_email1 === _email2) _email2 = '';
+
           // Map flat contentData back to SiteContent structure
           const mappedContent: SiteContent = {
             logo: contentData.logo || 'https://i.ibb.co/twrktVdQ/Whats-App-Image-2026-04-29-at-6-51-43-AM.jpg',
@@ -179,8 +183,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
               whatsapp: contentData.social_whatsapp || 'https://wa.me/2348055982094',
             },
             contactInfo: {
-              email1: contentData.contact_email1 || INITIAL_CONTENT.contactInfo.email1,
-              email2: contentData.contact_email2 || INITIAL_CONTENT.contactInfo.email2,
+              email1: _email1,
+              email2: _email2,
               phone: contentData.contact_phone || INITIAL_CONTENT.contactInfo.phone,
             }
           };

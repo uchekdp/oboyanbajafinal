@@ -128,13 +128,12 @@ export default function Navbar() {
                   <MessageCircle size={16} />
                   <span>+234 805 598 2094 (WhatsApp Only)</span>
                 </div>
-                <div className="flex items-start gap-3 text-sm text-gray-400">
-                  <Mail size={16} className="mt-1" />
-                  <div className="flex flex-col">
-                    {content.contactInfo.email1 && <span>{content.contactInfo.email1}</span>}
-                    {content.contactInfo.email2 && <span>{content.contactInfo.email2}</span>}
+                {content.contactInfo.email1 && (
+                  <div className="flex items-center gap-3 text-sm text-gray-400">
+                    <Mail size={16} />
+                    <span>{content.contactInfo.email1}</span>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </motion.div>

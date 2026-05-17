@@ -81,16 +81,17 @@ Message: ${formData.message}`;
                 </div>
               </div>
 
-              <div className="flex gap-6 items-start group">
-                <div className="w-14 h-14 border border-gray-100 flex items-center justify-center shrink-0 group-hover:bg-sage group-hover:border-sage transition-all duration-500">
-                  <Mail className="text-charcoal group-hover:text-white transition-colors" size={24} strokeWidth={1} />
+              {content.contactInfo.email1 && (
+                <div className="flex gap-6 items-start group">
+                  <div className="w-14 h-14 border border-gray-100 flex items-center justify-center shrink-0 group-hover:bg-sage group-hover:border-sage transition-all duration-500">
+                    <Mail className="text-charcoal group-hover:text-white transition-colors" size={24} strokeWidth={1} />
+                  </div>
+                  <div>
+                     <h4 className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2">Email Us</h4>
+                     <a href={`mailto:${content.contactInfo.email1}`} className="text-xl font-serif text-charcoal block hover:text-sage transition-colors">{content.contactInfo.email1}</a>
+                  </div>
                 </div>
-                <div>
-                   <h4 className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-2">Email Us</h4>
-                   {content.contactInfo.email1 && <a href={`mailto:${content.contactInfo.email1}`} className="text-xl font-serif text-charcoal block hover:text-sage transition-colors">{content.contactInfo.email1}</a>}
-                   {content.contactInfo.email2 && <a href={`mailto:${content.contactInfo.email2}`} className="text-xl font-serif text-charcoal block hover:text-sage transition-colors mt-2">{content.contactInfo.email2}</a>}
-                </div>
-              </div>
+              )}
             </div>
           </div>
 

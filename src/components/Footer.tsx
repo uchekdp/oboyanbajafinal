@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, MessageCircle, Music2 } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Phone, Mail, MapPin, MessageCircle, Music2, Shield } from 'lucide-react';
 import { useStore } from '@/lib/store';
 
 export default function Footer() {
@@ -43,13 +43,12 @@ export default function Footer() {
                 <MessageCircle size={20} className="text-sage shrink-0" />
                 <span>+234 805 598 2094 (WhatsApp Only)</span>
               </div>
-              <div className="flex items-center gap-4">
-                <Mail size={20} className="text-sage shrink-0" />
-                <span>
-                  {content.contactInfo.email1}
-                  {content.contactInfo.email2 && <><br/>{content.contactInfo.email2}</>}
-                </span>
-              </div>
+              {content.contactInfo.email1 && (
+                <div className="flex items-center gap-4">
+                  <Mail size={20} className="text-sage shrink-0" />
+                  <span>{content.contactInfo.email1}</span>
+                </div>
+              )}
             </div>
 
             <div className="flex gap-4">
@@ -74,9 +73,12 @@ export default function Footer() {
 
       <div className="container-custom px-6 pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 uppercase tracking-widest font-semibold">
         <p>© {currentYear} OBOYANBAJA INVESTMENTS NIG LTD. ALL RIGHTS RESERVED.</p>
-        <div className="flex gap-8">
+        <div className="flex gap-8 items-center">
           <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+          <Link to="/admin/login" className="hover:text-white transition-colors" title="Admin Login">
+            <Shield size={16} />
+          </Link>
         </div>
       </div>
     </footer>

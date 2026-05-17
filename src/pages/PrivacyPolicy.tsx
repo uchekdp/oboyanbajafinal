@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
             <div>
               <h2 className="text-2xl font-serif text-charcoal mb-4">7. Contacting Us</h2>
               <p>
-                If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at oboyanbaja@gmail.com.
+                If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us via phone or WhatsApp.
               </p>
             </div>
           </div>
